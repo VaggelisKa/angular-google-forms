@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "semi": 1,
+        "react/jsx-props-no-spreading": 0,
+        "import/no-unresolved": 0,
+        "import/extensions": 0,
+        "import/prefer-default-export": 0,
+        "no-unused-vars": 1,
+        "import/order": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "react/require-default-props": 0,
+        "no-undef": 0,
+        "consistent-return": 0,
+        "import/no-cycle": 0,
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "semi": 1,
+        "react/jsx-props-no-spreading": 0,
+        "import/no-unresolved": 0,
+        "import/extensions": 0,
+        "import/prefer-default-export": 0,
+        "no-unused-vars": 1,
+        "import/order": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "react/require-default-props": 0,
+        "no-undef": 0,
+        "consistent-return": 0,
+        "import/no-cycle": 0,
+        "import/no-extraneous-dependencies": 0
+      }
+    }
+  ]
+}

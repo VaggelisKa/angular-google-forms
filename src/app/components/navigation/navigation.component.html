@@ -1,9 +1,13 @@
 <nav class="fixed top-10 left-1/2 -translate-x-1/2">
   <ul class="menu menu-horizontal bg-base-300 rounded-box">
     <li *ngFor="let link of links">
-      <a routerLinkActive="bg-gray-600" [routerLink]="link.path">{{
-        link.name
-      }}</a>
+      <a *ngIf="link.name === 'Logout'" (click)="handleLogout()">Logout</a>
+      <a
+        *ngIf="link.name !== 'Logout'"
+        routerLinkActive="bg-gray-600"
+        [routerLink]="link.path"
+        >{{ link.name }}
+      </a>
     </li>
   </ul>
 </nav>

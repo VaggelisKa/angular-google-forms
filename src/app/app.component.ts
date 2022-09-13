@@ -10,11 +10,13 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'feedback-analyzer';
 
+  isLoading$: Observable<Boolean>;
   isAuthenticated$: Observable<boolean>;
 
   constructor(private _authService: AuthService) {}
 
   ngOnInit(): void {
+    this.isLoading$ = this._authService.isLoading$;
     this.isAuthenticated$ = this._authService.isAuthenticated$;
   }
 }

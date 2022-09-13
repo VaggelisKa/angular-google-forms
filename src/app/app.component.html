@@ -1,7 +1,16 @@
-<div class="py-20">
-  <app-navigation *ngIf="isAuthenticated$ | async"></app-navigation>
+<div
+  class="flex justify-center content-center py-40"
+  *ngIf="isLoading$ | async"
+>
+  Loading...
 </div>
 
-<div class="flex justify-center content-center">
-  <router-outlet></router-outlet>
-</div>
+<ng-container *ngIf="(isLoading$ | async) === false">
+  <div class="py-20" *ngIf="isAuthenticated$ | async">
+    <app-navigation></app-navigation>
+  </div>
+
+  <div class="flex justify-center content-center">
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>

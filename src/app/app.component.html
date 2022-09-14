@@ -1,5 +1,6 @@
 <div
   class="flex justify-center content-center py-40"
+  [attr.aria-busy]="isLoading$ | async"
   *ngIf="isLoading$ | async"
 >
   Loading...

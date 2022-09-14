@@ -7,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    const form = await fetch(
+      'https://forms.googleapis.com/v1/forms/1BEtVQkqQAHt-jIn-GVyMMco3Q5vI3Epzy-SSPXzkOxs'
+    );
+
+    console.log(form);
+  }
 }
